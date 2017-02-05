@@ -1,0 +1,6 @@
+data.execute("create table stocks(date String, symbol String, price String, change String, volume String, prev_close String, open String, avg_daily_volume String, market_cap String, book_value String, ebitda String, dividend_share String, dividend_yield String, earnings_share String, days_high String, days_low String, year_high String, year_low String, fiftyday_moving_avg String, twohundredday_moving_avg String, price_earnings_ratio String, price_earnings_growth_ratio String, price_sales String, price_book String, short_ratio String)")
+
+
+
+data.execute("INSERT INTO stocks VALUES(?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)", (str(now), str(stock), s.get_price(), str(s.get_change()), s.get_volume(), s.get_prev_close(), str(s.get_open()), str(s.get_avg_daily_volume()), str(s.get_market_cap()), str(s.get_book_value()), str(s.get_ebitda()), str(s.get_dividend_share()), str(s.get_dividend_yield()), str(s.get_earnings_share()), str(s.get_days_high()), str(s.get_days_low()), str(s.get_year_high()), str(s.get_year_low()), str(s.get_50day_moving_avg()), str(s.get_200day_moving_avg()), str(s.get_price_earnings_ratio()), str(s.get_price_earnings_growth_ratio()), str(s.get_price_sales()), str(s.get_price_book()), str(s.get_short_ratio())))
+
