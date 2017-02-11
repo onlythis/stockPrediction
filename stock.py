@@ -53,9 +53,20 @@ def sql(select,where,like):
 	data=database.cursor()
 	ret=data.execute('select {} from stocks where {} like {} '.format(select,where,like))
 	ret2=[]
+	app=ret2.append
 	for each in ret:
-		ret2.append(each)
-	database.commit()
+		app(each)
+	data.close()
+	return ret2
+
+def select_col(col):
+	database = sqlite3.connect(r'/home/dan/Documents/database.db')
+	data=database.cursor()
+	ret=data.execute('select {} from stocks'.format(col))
+	ret2=[]
+	app=ret2.append
+	for each in ret:
+		app(each)
 	data.close()
 	return ret2
 
@@ -77,7 +88,7 @@ def writetoCSV():
 def update():
 	database = sqlite3.connect(r'/home/dan/Documents/database.db')
 	data=database.cursor()
-	data.execute('update stocks set date="2016-12-22" where date="2016-12-22 19:32:04.522185"')
+	data.execute('update stocks set date="2016-12-27" where date="2016-12-23 23:07:04.350565"')
 	database.commit()
 	data.close()
 
